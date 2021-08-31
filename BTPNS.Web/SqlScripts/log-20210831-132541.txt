@@ -1,0 +1,268 @@
+Execution started
+Will execute scripts starting at version 0.0
+Sql scripts validation OK
+Database setup OK
+====================================================================
+Execute 1.00-202108311313.sql
+====================================================================
+ splitted in 24 instructions
+------------------------------------------------------------------
+Test instruction #1
+------------------------------------------------------------------
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+
+------------------------------------------------------------------
+Test instruction #2
+------------------------------------------------------------------
+
+CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);
+
+------------------------------------------------------------------
+Test instruction #3
+------------------------------------------------------------------
+
+CREATE TABLE [AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+);
+
+------------------------------------------------------------------
+Test instruction #4
+------------------------------------------------------------------
+
+CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    [Discriminator] nvarchar(max) NOT NULL,
+    [RoleId1] nvarchar(450) NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId1] FOREIGN KEY ([RoleId1]) REFERENCES [AspNetRoles] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+);
+
+------------------------------------------------------------------
+Test instruction #5
+------------------------------------------------------------------
+
+CREATE TABLE [AspNetUserPermission] (
+    [Id] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NULL,
+    [Action] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserPermission] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserPermission_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE NO ACTION
+);
+
+------------------------------------------------------------------
+Test instruction #6
+------------------------------------------------------------------
+
+CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    [Discriminator] nvarchar(max) NOT NULL,
+    [UserId1] nvarchar(450) NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId1] FOREIGN KEY ([UserId1]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+
+------------------------------------------------------------------
+Test instruction #7
+------------------------------------------------------------------
+
+CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    [Discriminator] nvarchar(max) NOT NULL,
+    [Id] nvarchar(max) NULL,
+    [UserId1] nvarchar(450) NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId1] FOREIGN KEY ([UserId1]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+
+------------------------------------------------------------------
+Test instruction #8
+------------------------------------------------------------------
+
+CREATE TABLE [AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    [Discriminator] nvarchar(max) NOT NULL,
+    [RoleId1] nvarchar(450) NULL,
+    [UserId1] nvarchar(450) NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId1] FOREIGN KEY ([RoleId1]) REFERENCES [AspNetRoles] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId1] FOREIGN KEY ([UserId1]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+
+------------------------------------------------------------------
+Test instruction #9
+------------------------------------------------------------------
+
+CREATE TABLE [AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    [Discriminator] nvarchar(max) NOT NULL,
+    [UserId1] nvarchar(450) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId1] FOREIGN KEY ([UserId1]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+
+------------------------------------------------------------------
+Test instruction #10
+------------------------------------------------------------------
+
+CREATE INDEX [IX_AspNetRoleClaims_RoleId1] ON [AspNetRoleClaims] ([RoleId1]);
+
+------------------------------------------------------------------
+Test instruction #11
+------------------------------------------------------------------
+
+CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);
+
+------------------------------------------------------------------
+Test instruction #12
+------------------------------------------------------------------
+
+CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+
+------------------------------------------------------------------
+Test instruction #13
+------------------------------------------------------------------
+
+CREATE INDEX [IX_AspNetUserClaims_UserId1] ON [AspNetUserClaims] ([UserId1]);
+
+------------------------------------------------------------------
+Test instruction #14
+------------------------------------------------------------------
+
+CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);
+
+------------------------------------------------------------------
+Test instruction #15
+------------------------------------------------------------------
+
+CREATE INDEX [IX_AspNetUserLogins_UserId1] ON [AspNetUserLogins] ([UserId1]);
+
+------------------------------------------------------------------
+Test instruction #16
+------------------------------------------------------------------
+
+CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);
+
+------------------------------------------------------------------
+Test instruction #17
+------------------------------------------------------------------
+
+CREATE INDEX [IX_AspNetUserPermission_RoleId] ON [AspNetUserPermission] ([RoleId]);
+
+------------------------------------------------------------------
+Test instruction #18
+------------------------------------------------------------------
+
+CREATE INDEX [IX_AspNetUserRoles_RoleId1] ON [AspNetUserRoles] ([RoleId1]);
+
+------------------------------------------------------------------
+Test instruction #19
+------------------------------------------------------------------
+
+CREATE INDEX [IX_AspNetUserRoles_UserId1] ON [AspNetUserRoles] ([UserId1]);
+
+------------------------------------------------------------------
+Test instruction #20
+------------------------------------------------------------------
+
+CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);
+
+------------------------------------------------------------------
+Test instruction #21
+------------------------------------------------------------------
+
+CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);
+
+------------------------------------------------------------------
+Test instruction #22
+------------------------------------------------------------------
+
+CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+
+------------------------------------------------------------------
+Test instruction #23
+------------------------------------------------------------------
+
+CREATE INDEX [IX_AspNetUserTokens_UserId1] ON [AspNetUserTokens] ([UserId1]);
+
+------------------------------------------------------------------
+Test instruction #24
+------------------------------------------------------------------
+
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20210831061017_init', N'3.1.8');
+
+------------------------------------------------------------------
+Start script process
+Execute instruction #1
+Execute instruction #2
+Execute instruction #3
+Execute instruction #4
+Execute instruction #5
+Execute instruction #6
+Execute instruction #7
+Execute instruction #8
+Execute instruction #9
+Execute instruction #10
+Execute instruction #11
+Execute instruction #12
+Execute instruction #13
+Execute instruction #14
+Execute instruction #15
+Execute instruction #16
+Execute instruction #17
+Execute instruction #18
+Execute instruction #19
+Execute instruction #20
+Execute instruction #21
+Execute instruction #22
+Execute instruction #23
+Execute instruction #24
+1.00-202108311313.sql: Script execution successfull
+Batch OK

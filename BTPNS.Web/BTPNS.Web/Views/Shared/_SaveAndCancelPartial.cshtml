@@ -1,0 +1,5 @@
+﻿@inject IHtmlLocalizer<AppResources> AppResources
+<button type="submit" class="btn btn-primary ladda-button" data-style="expand-left">
+    <span class="ladda-label">@AppResources["Save"]</span>
+</button>
+<a asp-action="Index" class="btn btn-danger" id="cancelButton">@AppResources["Cancel"]</a>

@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BTPNS.Contracts\BTPNS.Contracts.csproj" />
+    <ProjectReference Include="..\BTPNS.Web\BTPNS.DAL\BTPNS.DAL.csproj" />
+  </ItemGroup>
+
+</Project>

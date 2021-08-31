@@ -1,0 +1,9 @@
+/**/.vs/*
+
+[Bb]in*
+[Oo]bj*
+.vs*
+*.csproj.user
+/**/Logs/*
+/Cremagest.Configuration.Services/*.json
+/TeamCost.MVC/appsettings*.json

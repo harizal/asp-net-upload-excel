@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTPNS.Web", "BTPNS.Web\BTPNS.Web.csproj", "{C2A997FA-E3F0-4963-9739-5D0F1A4575EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTPNS.Core", "..\BTPNS.Core\BTPNS.Core.csproj", "{29F1A024-ED3C-4684-AB07-F05024E4FC41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTPNS.BussinessObjects", "..\BTPNS.BussinessObjects\BTPNS.BussinessObjects.csproj", "{1AB1F0F5-E536-4344-A80B-E0CD112EE5A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTPNS.BLL", "..\BTPNS.BLL\BTPNS.BLL.csproj", "{D7CA1A24-E45F-448B-8571-C334D8584BF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTPNS.Contracts", "..\BTPNS.Contracts\BTPNS.Contracts.csproj", "{79AE6F27-4377-48FC-8739-868BCC81F27A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTPNS.DAL", "BTPNS.DAL\BTPNS.DAL.csproj", "{D9A9204D-03CF-4042-B5FD-73853D68E033}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2A997FA-E3F0-4963-9739-5D0F1A4575EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2A997FA-E3F0-4963-9739-5D0F1A4575EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2A997FA-E3F0-4963-9739-5D0F1A4575EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2A997FA-E3F0-4963-9739-5D0F1A4575EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F1A024-ED3C-4684-AB07-F05024E4FC41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F1A024-ED3C-4684-AB07-F05024E4FC41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F1A024-ED3C-4684-AB07-F05024E4FC41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F1A024-ED3C-4684-AB07-F05024E4FC41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AB1F0F5-E536-4344-A80B-E0CD112EE5A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AB1F0F5-E536-4344-A80B-E0CD112EE5A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AB1F0F5-E536-4344-A80B-E0CD112EE5A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AB1F0F5-E536-4344-A80B-E0CD112EE5A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7CA1A24-E45F-448B-8571-C334D8584BF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7CA1A24-E45F-448B-8571-C334D8584BF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7CA1A24-E45F-448B-8571-C334D8584BF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7CA1A24-E45F-448B-8571-C334D8584BF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79AE6F27-4377-48FC-8739-868BCC81F27A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79AE6F27-4377-48FC-8739-868BCC81F27A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79AE6F27-4377-48FC-8739-868BCC81F27A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79AE6F27-4377-48FC-8739-868BCC81F27A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9A9204D-03CF-4042-B5FD-73853D68E033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9A9204D-03CF-4042-B5FD-73853D68E033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9A9204D-03CF-4042-B5FD-73853D68E033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9A9204D-03CF-4042-B5FD-73853D68E033}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14E6C386-0211-4E04-A485-74301C8F3C12}
+	EndGlobalSection
+EndGlobal
