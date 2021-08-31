@@ -73,18 +73,19 @@
                     }*@
                 if (PermissionHelper.GetPermission(PermissionConstants.ViewSuperAdminMode))
                 {
-                    <li class="nav-item @Html.IsMenuActive("Employee")">
-                        <a class="nav-link" asp-area="" asp-controller="Employee" asp-action="Index"><i class="fas fa-fw fa-folder"></i><span>@AppResources["Employee"]</span></a>
-                    </li>
-                    @*<li class="nav-item @Html.IsMenuActive("Employee") || @Html.IsMenuActive("TeamAssignment")">
-                            <a class="nav-link" asp-area="" asp-controller="Employee" asp-action="Index"><i class="fas fa-fw fa-folder"></i><span>@AppResources["Employees"]</span></a>
-                        </li>
-                        <li class="nav-item @Html.IsMenuActive("Team") || @Html.IsMenuActive("SharedTeam")">
-                            <a class="nav-link " asp-area="" asp-controller="Team" asp-action="Index"><i class="fas fa-fw fa-folder"></i><span>@AppResources["Teams"]</span></a>
-                        </li>
-                        <li class="nav-item @Html.IsMenuActive("ReportTeamCost")">
-                            <a class="nav-link " asp-area="" asp-controller="ReportTeamCost" asp-action="Index"><i class="fas fa-fw fa-folder"></i><span>@AppResources["TeamCost"]</span></a>
-                        </li>*@
+                    @*
+                        <li class="nav-item @Html.IsMenuActive("Employee")">
+                                <a class="nav-link" asp-area="" asp-controller="Employee" asp-action="Index"><i class="fas fa-fw fa-folder"></i><span>@AppResources["Employee"]</span></a>
+                            </li>
+                            <li class="nav-item @Html.IsMenuActive("Employee") || @Html.IsMenuActive("TeamAssignment")">
+                                    <a class="nav-link" asp-area="" asp-controller="Employee" asp-action="Index"><i class="fas fa-fw fa-folder"></i><span>@AppResources["Employees"]</span></a>
+                                </li>
+                                <li class="nav-item @Html.IsMenuActive("Team") || @Html.IsMenuActive("SharedTeam")">
+                                    <a class="nav-link " asp-area="" asp-controller="Team" asp-action="Index"><i class="fas fa-fw fa-folder"></i><span>@AppResources["Teams"]</span></a>
+                                </li>
+                                <li class="nav-item @Html.IsMenuActive("ReportTeamCost")">
+                                    <a class="nav-link " asp-area="" asp-controller="ReportTeamCost" asp-action="Index"><i class="fas fa-fw fa-folder"></i><span>@AppResources["TeamCost"]</span></a>
+                                </li>*@
                     @*<li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="User" asp-action="Index">@AppResources["Users"]</a>
                         </li>
